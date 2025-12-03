@@ -13,7 +13,10 @@ import {
   TrophyOutlined,
   ThunderboltOutlined,
   EnvironmentOutlined,
-  TeamOutlined
+  TeamOutlined,
+  HeartOutlined,
+  SwapOutlined,
+  ProfileOutlined
 } from "@ant-design/icons";
 
 function DefaultLayout(props) {
@@ -44,11 +47,35 @@ function DefaultLayout(props) {
       {user ? (
         <>
           <Menu.Item 
+            key="profile"
+            icon={<ProfileOutlined style={{ color: '#667eea' }} />}
+            style={{ borderRadius: '10px', margin: '5px 0' }}
+          >
+            <Link to="/profile">My Profile</Link>
+          </Menu.Item>
+          
+          <Menu.Item 
             key="bookings"
             icon={<CalendarOutlined style={{ color: '#667eea' }} />}
             style={{ borderRadius: '10px', margin: '5px 0' }}
           >
             <Link to="/userbookings">My Bookings</Link>
+          </Menu.Item>
+          
+          <Menu.Item 
+            key="favorites"
+            icon={<HeartOutlined style={{ color: '#ff4d4f' }} />}
+            style={{ borderRadius: '10px', margin: '5px 0' }}
+          >
+            <Link to="/favorites">Favorites</Link>
+          </Menu.Item>
+          
+          <Menu.Item 
+            key="compare"
+            icon={<SwapOutlined style={{ color: '#1890ff' }} />}
+            style={{ borderRadius: '10px', margin: '5px 0' }}
+          >
+            <Link to="/compare">Compare Cars</Link>
           </Menu.Item>
           
           <Menu.Item 

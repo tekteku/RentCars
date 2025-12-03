@@ -12,6 +12,9 @@ import AdminHome from "./pages/AdminHome";
 import EditCar from "./pages/EditCar";
 import LoyaltyDashboard from "./pages/LoyaltyDashboard";
 import TripPlanner from "./pages/TripPlanner";
+import UserProfile from "./pages/UserProfile";
+import Favorites from "./pages/Favorites";
+import CompareVehicles from "./pages/CompareVehicles";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <ProtectedRoute path="/booking/:carid" component={BookingCar} />     
           <ProtectedRoute path="/loyalty" component={LoyaltyDashboard} />
           <ProtectedRoute path="/trip-planner" component={TripPlanner} />
+          <ProtectedRoute path="/profile" component={UserProfile} />
+          <ProtectedRoute path="/favorites" component={Favorites} />
+          <Route path="/compare" component={CompareVehicles} />
           <ProtectedRouteAdmin path="/editcar/:carid"  component={EditCar} />
           <ProtectedRouteAdmin path="/admin"  component={AdminHome} />
           <ProtectedRouteAdmin path="/addcar" component={AddCar} />
