@@ -473,3 +473,4 @@ Made with cutting-edge technology and innovative thinking
 
 </div>
 <img width="1352" height="672" alt="image" src="https://github.com/user-attachments/assets/f49b3f35-4979-460e-b999-131d899c1374" />
+<img width="1356" height="674" alt="image" src="https://github.com/user-attachments/assets/4c2fb62b-f535-4e49-8fcb-b17c4b3a8fe3" />
