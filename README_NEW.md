@@ -472,3 +472,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Made with cutting-edge technology and innovative thinking
 
 </div>
+<img width="1352" height="672" alt="image" src="https://github.com/user-attachments/assets/f49b3f35-4979-460e-b999-131d899c1374" />
