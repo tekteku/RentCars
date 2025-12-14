@@ -1,0 +1,531 @@
+/* ========================================
+   RentCars - Modern CSS Styles
+   Enhanced UI/UX with Animations
+======================================== */
+
+/* Base Styles */
+.App {
+  text-align: left;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+}
+
+#cars {
+  text-align: right;
+}
+
+/* Root CSS Variables */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --success-color: #52c41a;
+  --warning-color: #fa8c16;
+  --danger-color: #ff4d4f;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --bg-light: rgba(255, 255, 255, 0.95);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --border-radius: 15px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Gradient Text Animation */
+.text-gradient-animate {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* App Logo */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Header Styles */
+.App-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Animation Keyframes */
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color); }
+  50% { box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.bounce {
+  animation: bounce 2s ease infinite;
+}
+
+.pulse {
+  animation: pulse 2s ease infinite;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Card Styles */
+.car-card {
+  background: var(--bg-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  box-shadow: var(--shadow-sm);
+}
+
+.car-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.car-card img {
+  transition: var(--transition);
+}
+
+.car-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Button Styles */
+.btn1 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.btn1:active {
+  transform: translateY(-1px);
+}
+
+.btn1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
+}
+
+.btn1:hover::before {
+  left: 100%;
+}
+
+/* Input Styles */
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-picker {
+  border-radius: 12px !important;
+  border: 2px solid rgba(102, 126, 234, 0.2) !important;
+  transition: var(--transition) !important;
+}
+
+.ant-input:hover,
+.ant-input-affix-wrapper:hover,
+.ant-picker:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.ant-input:focus,
+.ant-input-affix-wrapper-focused,
+.ant-picker-focused {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Login/Register Styles */
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.login-Form {
+  background: var(--bg-light);
+  border-radius: 0 30px 30px 0;
+  padding: 60px 50px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Spinner Styles */
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.spinner-inner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(102, 126, 234, 0.2);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Navigation Styles */
+.nav-header {
+  background: var(--bg-light);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-md);
+  padding: 15px 30px;
+  border-radius: 0 0 25px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Stats Card */
+.stats-card {
+  background: var(--bg-light);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.stats-number {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Badge Styles */
+.feature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  color: var(--primary-color);
+  margin: 3px;
+}
+
+/* Price Tag */
+.price-tag {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* Rating Stars */
+.rating-stars {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-Form {
+    border-radius: 30px;
+    margin-top: 20px;
+    padding: 40px 30px;
+    min-height: auto;
+  }
+  
+  .login-logo {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .car-card {
+    margin-bottom: 20px;
+  }
+  
+  .nav-header {
+    padding: 10px 15px;
+    border-radius: 0;
+  }
+}
+
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--border-radius);
+}
+
+/* Tooltip Styles */
+.ant-tooltip-inner {
+  border-radius: 10px !important;
+  padding: 10px 15px !important;
+}
+
+/* Modal Styles */
+.ant-modal-content {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  border-radius: 20px 20px 0 0 !important;
+}
+
+/* Table Styles */
+.ant-table {
+  border-radius: var(--border-radius) !important;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Alert Styles */
+.ant-alert {
+  border-radius: 12px !important;
+}
+
+/* Notification Animation */
+.notification-enter {
+  animation: slideInRight 0.3s ease;
+}
+
+/* Page Transition */
+.page-transition {
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--border-radius);
+}
+
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, var(--text-primary), #1a202c);
+  color: white;
+  padding: 60px 30px 30px;
+  margin-top: 80px;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
